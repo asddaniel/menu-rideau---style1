@@ -1,0 +1,96 @@
+*, ::before, ::after{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    background: rgb(151, 152, 155);
+}
+.home{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+}
+h1{
+    font-weight: bold;
+    color: whitesmoke;
+}
+.nav-toggler{
+    position: fixed;
+    z-index: 15;
+    top: 3vh;
+    left: 3vw;
+    height: 8vh;
+    width: 8vw;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: transparent;
+}
+.line{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.5vh;
+    background: #f1f1f1;
+    transition: 0.5s ease-out, 
+    opacity 0.2s ease-out;
+}
+.l1{
+    transform: translateY(-10px);
+}
+.l3{
+    transform: translateY(10px);
+}
+.nav-toggler.active .l1{
+transform: translateY(0px) rotate(135deg);
+}
+.nav-toggler.active .l2{
+    opacity: 0;
+    }
+    .nav-toggler.active .l3{
+        transform: translateY(0px) rotate(-135deg);
+        }
+nav{
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1d1d1d;
+    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.64, 0.84);
+    transform: translateX(-100%);
+
+}
+nav.active{
+    transform: translate(0);
+}
+nav a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: f1f1f1;
+    font-size: 4vh;
+    display: block;
+    margin: 2vh 0;
+    padding: 1vw;
+}
+
+@media screen and (max-width: 900px) {  
+    nav{
+        flex-direction: column;
+        width: 50vw;
+        height: 100vh;
+        z-index: 15;
+    }
+    .home.active{
+        filter: blur(2px);
+        z-index: -5;
+    }
+}
