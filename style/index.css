@@ -67,7 +67,7 @@ nav{
     align-items: center;
     background: #1d1d1d;
     transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.64, 0.84);
-    transform: translateX(-100%);
+    transform: translateY(-100%);
 
 }
 nav.active{
@@ -88,6 +88,7 @@ nav a{
         width: 50vw;
         height: 100vh;
         z-index: 15;
+        transform: translateX(-100%);
     }
     .home.active{
         filter: blur(2px);
